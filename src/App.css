@@ -1,0 +1,106 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #0A0A0A;
+  color: white;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.main-wrapper {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.counter-box {
+  position: relative;
+  padding: 30px 40px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  text-align: center;
+  margin-bottom: 60px;
+  margin-top: 200px;
+}
+
+.counter-value {
+  font-size: clamp(80px, 20vw, 250px);
+  font-weight: 700;
+  margin: 0;
+  color: #00eaff;
+  text-shadow: 0 0 25px #00eaff;
+}
+
+.flame {
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70px;
+  height: 100px;
+  background: url("https://i.imgur.com/6O6mt7v.png") no-repeat center/contain;
+  animation: flameDance 0.3s infinite alternate;
+}
+
+@keyframes flameDance {
+  from { transform: translateX(-50%) scale(1); }
+  to   { transform: translateX(-50%) scale(1.1); }
+}
+
+.bottom-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-top: 200px;
+}
+
+input {
+  padding: 8px 12px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  width: 180px;
+}
+
+.buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.btn {
+  padding: 8px 16px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  color: white;
+  transition: 0.3s;
+}
+
+.btn-inc {
+  background: linear-gradient(45deg, #00ff87, #0cbaba);
+}
+.btn-dec {
+  background: linear-gradient(45deg, #ff4747, #c71d1d);
+}
+.btn-reset {
+  background: linear-gradient(45deg, #ffd000, #ff8800);
+}
+
+.btn:hover {
+  transform: scale(1.07);
+}
+
+.highest-text {
+  font-size: 1.2rem;
+  color: #ffd700;
+  text-shadow: 0 0 8px #ffd700;
+}
