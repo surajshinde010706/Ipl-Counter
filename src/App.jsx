@@ -33,6 +33,33 @@ function App() {
 
   const handleReset = () => setAmount(0);
 
+  // NEW BUTTON HANDLERS
+  const increaseBy20L = () => {
+    setAmount(prev => {
+      const updated = prev + 20_00_000;
+      if (updated > highest) setHighest(updated);
+      return updated;
+    });
+  };
+
+  const setTo2Cr = () => {
+    const updated = 2_00_00_000;
+    setAmount(updated);
+    if (updated > highest) setHighest(updated);
+  };
+
+  const setTo1Cr = () => {
+    const updated = 1_00_00_000;
+    setAmount(updated);
+    if (updated > highest) setHighest(updated);
+  };
+
+  const setTo20L = () => {
+    const updated = 20_00_000;
+    setAmount(updated);
+    if (updated > highest) setHighest(updated);
+  };
+
   const showFlame = amount >= highest && highest > 0;
 
   return (
@@ -54,6 +81,14 @@ function App() {
           <button className="btn btn-inc" onClick={handleIncrease}>Increase</button>
           <button className="btn btn-dec" onClick={handleDecrease}>Decrease</button>
           <button className="btn btn-reset" onClick={handleReset}>Reset</button>
+        </div>
+
+        {/* NEW BUTTONS */}
+        <div className="buttons">
+          <button className="btn btn-inc" onClick={increaseBy20L}>Increase by 20L</button>
+          <button className="btn btn-inc" onClick={setTo2Cr}>Set Amount to 2 Cr</button>
+          <button className="btn btn-inc" onClick={setTo1Cr}>Set Amount to 1 Cr</button>
+          <button className="btn btn-inc" onClick={setTo20L}>Set Amount to 20L</button>
         </div>
 
         <h2 className="highest-text">Highest Count: {formatValue(highest)}</h2>
